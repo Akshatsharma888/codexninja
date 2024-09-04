@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../api/api';
 import Loading from './Loading';
 import {         
@@ -157,7 +157,7 @@ function TeacherDashboard() {
     }
   };
 
-  const uploadLecture = async (id) => {
+  const uploadLecture = async () => {
     try {
       if (!lectureFile || lectureFile.type !== 'video/mp4') {
         console.error('Please select a MP4 file');
@@ -169,8 +169,9 @@ function TeacherDashboard() {
       formData.append('video', lectureFile);
 
       // Send the video to the Flask API
-      const flaskResponse = await fetch('http://127.0.0.1:5000/process_video', {
+      const flaskResponse = await fetch(' http://127.0.0.1:5000/process_video', {
         method: 'POST',
+        // method: 'no cores',
         body: formData,
       });
       const flaskData = await flaskResponse.json();
@@ -310,11 +311,14 @@ function TeacherDashboard() {
                   onClick={() => setSelectedClassroom(classroom)}
                 >
                   <Typography variant="body1">{classroom.name}</Typography>
+                  <Typography variant="body1">{classroom.code}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography variant="body2">
                     {classroom.students.length} students
+                    
                   </Typography>
+                  <p>{classroom.code}</p>
                 </AccordionDetails>
               </Accordion>
             ))}

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 // import axios from 'axios';
 import api from "./api/api";
 import { useNavigate } from 'react-router-dom';
-import student4Image from '../../public/student4.png';
+// import student4Image from '../../public/student4.png';
 
 function Login() {
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ function Login() {
                     <form className="max-w-lg w-full mx-auto" onSubmit={handleLogin}>
                         <div className="mb-12">
                             <h3 className="text-gray-800 text-4xl font-extrabold">Sign in</h3>
-                            <p className="text-gray-800 text-sm mt-4 ">Don't have an account <a href="/signup" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</a></p>
+                            <p className="text-gray-800 text-sm mt-4 ">Don&apos;t have an account <a href="/signup" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</a></p>
                         </div>
 
                         <div>

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+// import { useState } from 'react';
 import { Line, Bar, Pie } from 'react-chartjs-2';
 import './DummyChartsComponent.css'; // Import CSS for styling
 
 const DummyChartsComponent = () => {
   // Sample data
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
   const attendanceData = {
     labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
     datasets: [
@@ -57,12 +55,8 @@ const DummyChartsComponent = () => {
     ],
   };
 
-  const handleHover = (index) => {
-    setHoveredIndex(index);
-  };
-
   const handleLeave = () => {
-    setHoveredIndex(null);
+    // Handle mouse leave event
   };
 
   const chartOptions = {

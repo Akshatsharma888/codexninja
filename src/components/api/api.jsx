@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create a custom axios instance
 const api = axios.create({
-  baseURL: 'https://075dhm4s-8000.inc1.devtunnels.ms/api/',
+  baseURL: 'http://127.0.0.1:8000/api/',
   timeout: 5000,
 });
 

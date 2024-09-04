@@ -77,7 +77,7 @@ function MyQuillComponent({ initialContent, onSubmit }) {
   };
   React.useEffect(() => {
     setValue(initialContent || selectedTemplate.content);
-  }, [initialContent]);
+  }, [initialContent, selectedTemplate.content]);
   return (
     <div className="container mx-auto p-4">
       {/* Template selection */}

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import MyQuillComponent from './blogs.jsx';
 import api from '../../api/api';
 import { Line , Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, registerables } from 'chart.js';
-import { Chart } from 'react-chartjs-2';
+// import { Chart } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
 import { format } from 'date-fns';
-import { FaLessThan } from 'react-icons/fa';
+// import { FaLessThan } from 'react-icons/fa';
 
 ChartJS.register(...registerables);
 

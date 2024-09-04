@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import Benefits from "./components/Benefits";
@@ -19,7 +19,7 @@ const App = () => {
   const isDashboard = location.pathname === "/teacher-dashboard" || location.pathname === "/student-dashboard";
 
   return (
-    <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+    <div className={`${!isDashboard ? "pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden" : ""}`}>
       {!isDashboard && <Header />}
       <Routes>
         <Route path="/" element={

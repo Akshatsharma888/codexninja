@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../api/api';
 import './user_components/StudentDashboard.css';
 import Modal from 'react-modal';
@@ -18,8 +18,8 @@ function StudentDashboard() {
   const [user, setUser] = useState(null);
   const [classroomCode, setClassroomCode] = useState('');
   const [classrooms, setClassrooms] = useState([]);
-  const [resources, setResources] = useState([]);
-  const [lectures, setLectures] = useState([]);
+  // const [resources, setResources] = useState([]);
+  // const [lectures, setLectures] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState({});
   const [messages, setMessages] = useState({});
   const [selectedSection, setSelectedSection] = useState('dashboard');

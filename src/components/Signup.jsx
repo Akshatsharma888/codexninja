@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import Header from "./Header";
-import Footer from "./Footer";
+// import { disablePageScroll, enablePageScroll } from "scroll-lock";
+// import Header from "./Header";
+// import Footer from "./Footer";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { FiBook, FiUser } from "react-icons/fi";
 import api from "./api/api";
 import videoFile from './dd.mp4';
 
-
 const Signup = () => {
-    const pathname = useLocation();
-    const [openNavigation, setOpenNavigation] = useState(false);
+    useLocation();
+    // const [openNavigation, setOpenNavigation] = useState(false);
     const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -25,7 +24,6 @@ const Signup = () => {
     const [department, setDepartment] = useState('');
     const [isTeacher, setIsTeacher] = useState(false);
     const [errors, setErrors] = useState({});
-    const [successMessage, setSuccessMessage] = useState('');
     const [usernameAvailable, setUsernameAvailable] = useState(true);
 
     const handleSubmit = async (event) => {
@@ -48,8 +46,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await api.post(`${isTeacher ? 'teachers' : 'students'}/`, formData);
-            setSuccessMessage('Registration successful!');
+            await api.post(`${isTeacher ? 'teachers' : 'students'}/`, formData);
             navigate("/login");
         } catch (error) {
             if (error.response) {
@@ -68,23 +65,6 @@ const Signup = () => {
         } catch (error) {
             console.log(error);
         }
-    };
-
-    const toggleNavigation = () => {
-        if (openNavigation) {
-            setOpenNavigation(false);
-            enablePageScroll();
-        } else {
-            setOpenNavigation(true);
-            disablePageScroll();
-        }
-    };
-
-    const handleClick = () => {
-        if (!openNavigation) return;
-
-        enablePageScroll();
-        setOpenNavigation(false);
     };
 
     return (

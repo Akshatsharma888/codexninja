@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Modal from 'react-modal';
 
 function ClassroomModal({ isOpen, onRequestClose, classroomCode, setClassroomCode, joinClassroom }) {
