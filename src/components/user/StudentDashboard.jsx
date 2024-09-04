@@ -42,7 +42,6 @@ function StudentDashboard() {
       console.error('Error fetching blogs', error);
     }
   }
-
   useEffect(() => {
     fetchBlogs();
   }, []);

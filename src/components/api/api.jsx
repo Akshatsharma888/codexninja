@@ -2,9 +2,27 @@ import axios from 'axios';
 
 // Create a custom axios instance
 const api = axios.create({
+<<<<<<< HEAD
   baseURL: 'http://127.0.0.1:8000/api/',
+=======
+  baseURL: 'https://backend-nfkn.onrender.com/api',
+>>>>>>> 33697250c9a04f6d987b30af7f01736d089c92b0
   timeout: 5000,
 });
+
+// Function to send a keep-alive request
+const keepServerAlive = async () => {
+  try {
+    respo  = await api.get('/blogs/'); // Replace with an appropriate endpoint for your server
+    console.log(respo.data);
+  } catch (error) {
+    console.error('Error keeping server alive', error);
+  }
+};
+
+// Set an interval to keep the server alive every 4 minutes
+const KEEP_ALIVE_INTERVAL = 4 * 60 * 100; // 4 minutes
+setInterval(keepServerAlive, KEEP_ALIVE_INTERVAL);
 
 // Add a response interceptor
 api.interceptors.response.use(

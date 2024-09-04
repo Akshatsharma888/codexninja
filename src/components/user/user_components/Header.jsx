@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { FaBell, FaSearch } from "react-icons/fa";
-import defaultavatar from "../../../assets/images/avatar-13.png";
+import  { useState } from 'react';
+import { FaBell, FaSearch } from 'react-icons/fa';
+import defaultavatar from '../../../assets/images/avatar-13.png'
 
 function Header({ user, onLogoutClick }) {
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleUserDetails = () => {
     setShowUserDetails(!showUserDetails);
@@ -19,17 +20,11 @@ function Header({ user, onLogoutClick }) {
   };
 
   return (
-    <nav className="bg-white border-gray-100 dark:bg-gray-900 p-4 gap-10">
-      <div className=" flex flex-1 items-center justify-between  mx-auto">
+    <nav className={`bg-white border-gray-100 dark:bg-gray-900 p-4`}>
+      <div className="max-w-screen- flex flex-wrap items-center justify-between mx-auto">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Logo"
-          />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Student Dashboard
-          </span>
+          <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Student Dashboard</span>
         </a>
 
         <div className="flex items-center md:order-2 space-x-3 rtl:space-x-reverse">
